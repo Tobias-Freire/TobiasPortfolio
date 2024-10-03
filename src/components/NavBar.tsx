@@ -9,33 +9,8 @@ const NavBar: React.FC = () => {
     navigate(`/${pageName}`);
   };
 
-  const styles = {
-    navContainer: {
-      display: 'flex',
-      padding: '1rem',
-      backgroundColor: '#f5f5f5',
-    },
-    navList: {
-      listStyleType: 'none',
-      display: 'flex',
-      padding: 0,
-      maxWidth: '100%',
-      //marginLeft: 'auto',
-    },
-    navItem: (isHovered: boolean) => ({
-      cursor: 'pointer',
-      backgroundColor: isHovered ? 'black' : 'transparent',
-      transition: 'background-color 0.3s ease',
-      color: isHovered ? 'white' : 'black',
-      padding: '1rem',
-      border: 'none',
-    }),
-  };
-  
-  
-
   const navItems = [
-    { name: 'Home', page: ''},
+    { name: 'Home', page: '' },
     { name: 'About me', page: 'about' },
     { name: 'Contact', page: 'contact' },
     { name: 'Work experience', page: 'work-experience' },
@@ -54,12 +29,39 @@ const NavBar: React.FC = () => {
             onClick={() => redirect(item.page)}
             className='NavItem'
           >
-            {item.name}
+            <strong>{item.name}</strong>
           </button>
         ))}
       </div>
     </nav>
   );
+};
+
+const styles = {
+  navContainer: {
+    display: 'flex',
+    padding: '1.5rem',
+    backgroundColor: 'transparent', // Fundo transparente
+    backdropFilter: 'blur(10px)', // Efeito de desfoque
+    alignItems: 'center',
+    width: '100%',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+  },
+  navList: {
+    listStyleType: 'none',
+    display: 'flex',
+    padding: 0,
+    maxWidth: '100%',
+  },
+  navItem: (isHovered: boolean) => ({
+    cursor: 'pointer',
+    backgroundColor: isHovered ? 'rgba(0, 0, 0, 0.2)' : 'transparent', // Fundo mais escuro ao passar o mouse
+    transition: 'background-color 0.3s ease',
+    color: 'white',
+    padding: '1.5rem 2rem',
+    border: 'none',
+    fontSize: '1.2rem',
+  }),
 };
 
 export default NavBar;
