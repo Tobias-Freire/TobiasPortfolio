@@ -1,26 +1,39 @@
+import { useState } from "react";
 import NavBar from "../components/NavBar";
 
 function Home() {
+    const images = ['myIcon1.png', 'myIcon2.png', 'myIcon3.png'];
+    const texts = [
+        'Hire me pleaseeee :(', 
+        'Wait, you want to hire me?', 
+        <span>See <a href="/contact" style={{ color: 'black' }}>my contacts</a> :D</span>
+    ];
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const handleClick = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
     return (
         <div className="Home" style={styles.homeDiv}>
             <NavBar />
             <div className="character" style={styles.characterDiv}>
-                <img src="myIcon.png" alt="icon" style={styles.characterImg} />
-                <div style={styles.speechBubble}>
-                    <a href="/contact" style={styles.link}>HIRE ME</a> &nbsp; PLEASEEE :D
-                </div>
+                <button onClick={handleClick} style={styles.speechBubble}>
+                    <strong>{texts[currentIndex]}</strong>
+                </button>
+                <img src={images[currentIndex]} alt="icon" style={styles.characterImg} />
             </div>
         </div>
     );
 }
+
 
 const styles = {
     homeDiv: {
         height: '100vh',
         display: 'flex' as 'flex',
         flexDirection: 'column' as 'column',
-        background: 'linear-gradient(to bottom right, #191970, #4B0082)', // Gradiente roxo
-        overflow: 'hidden', // Adicione isso para evitar rolagem
+        background: 'linear-gradient(to bottom right, #191970, #4B0082)', 
+        overflow: 'hidden', 
     },
     characterDiv: {
         flex: 1,
@@ -28,8 +41,8 @@ const styles = {
         alignItems: 'center' as 'center',
         justifyContent: 'center' as 'center',
         position: 'relative' as 'relative',
-        margin: 0, // Certifique-se de que não há margens
-        padding: 0, // Certifique-se de que não há preenchimentos
+        margin: 0, 
+        padding: 0, 
     },
     characterImg: {
         height: 'auto',
