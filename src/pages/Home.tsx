@@ -77,7 +77,7 @@ function Home() {
             right: '5px',
         },
         icon: {
-            height: '15px',
+            height: '16px',
             width: 'auto',
         },
     };
