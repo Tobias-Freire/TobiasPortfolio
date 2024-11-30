@@ -1,0 +1,98 @@
+.card-conteiner {
+    background-color: #eeeae9;
+    width: 90%; /* Ajuste inicial para telas menores */
+    max-width: 25%; /* Mantém o limite máximo em telas maiores */
+    margin: 1rem; /* Centraliza horizontalmente e ajusta margens */
+    border-radius: 5px;
+    padding: 0.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições para interação */
+}
+
+.card-conteiner:hover {
+    transform: translateY(-5px); /* Eleva levemente o cartão ao passar o mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Intensifica a sombra */
+}
+
+.text {
+    color: black;
+    font-size: 2rem; /* Tamanho de fonte ajustável */
+    text-align: center; /* Centraliza o texto */
+    line-height: 1.5;
+}
+
+.rounded-cropped {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; /* Centraliza o círculo */
+}
+
+.rounded-cropped img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.icon-group {
+    display: flex; /* Alinha as imagens em linha */
+    justify-content: center; /* Centraliza as imagens */
+    margin-top: 1rem; /* Espaço entre a imagem principal e os ícones */
+    gap: 1rem; /* Espaço entre os ícones */
+}
+
+.icon {
+    width: 40px; /* Ajusta o tamanho do ícone */
+    height: 40px; /* Mantém a proporção do ícone */
+    object-fit: contain; /* Garante que a imagem não seja cortada */
+    transition: transform 0.3s; /* Animação ao passar o mouse */
+}
+
+.icon:hover {
+    transform: scale(1.2); /* Aumenta o ícone levemente ao passar o mouse */
+}
+
+.about-me-text {
+    font-size: 1rem; /* Tamanho de texto confortável para leitura */
+    color: #444; /* Cor de texto agradável */
+    line-height: 1.8; /* Linha espaçada para melhorar a legibilidade */
+    margin-top: 1.5rem; /* Espaço entre o texto e o grupo de ícones */
+    text-align: justify; /* Justifica o texto para um visual profissional */
+    padding: 0.5rem; /* Espaço interno para evitar texto colado nas bordas */
+    border-top: 1px solid #cccccc72; /* Adiciona uma linha para separar do restante do conteúdo */
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-conteiner {
+        width: 80%;
+        padding: 1rem;
+    }
+
+    .text {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .rounded-cropped {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-conteiner {
+        width: 95%;
+        padding: 0.75rem;
+    }
+
+    .text {
+        font-size: 0.85rem;
+    }
+
+    .rounded-cropped {
+        width: 100px;
+        height: 100px;
+    }
+}
