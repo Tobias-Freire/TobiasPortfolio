@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Garante que cubra 100% da altura do viewport */
+  height: auto; /* Garante que cubra 100% da altura do viewport */
 }
 
 #root {

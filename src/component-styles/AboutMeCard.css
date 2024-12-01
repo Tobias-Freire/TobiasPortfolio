@@ -1,24 +1,25 @@
 .card-conteiner {
-    background-color: #eeeae9;
-    width: 90%; /* Ajuste inicial para telas menores */
-    max-width: 25%; /* Mantém o limite máximo em telas maiores */
-    margin: 1rem; /* Centraliza horizontalmente e ajusta margens */
-    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 90%; 
+    max-width: 100%; 
+    margin: 1rem; 
+    border-radius: 10px;
     padding: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transições para interação */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s, box-shadow 0.3s; 
 }
 
 .card-conteiner:hover {
-    transform: translateY(-5px); /* Eleva levemente o cartão ao passar o mouse */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Intensifica a sombra */
+    transform: translateY(-5px); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
 .text {
     color: black;
-    font-size: 2rem; /* Tamanho de fonte ajustável */
-    text-align: center; /* Centraliza o texto */
+    font-size: 2rem; 
+    text-align: center; 
     line-height: 1.5;
+    margin-bottom: 1rem;
 }
 
 .rounded-cropped {
@@ -26,7 +27,7 @@
     height: 15rem;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto; /* Centraliza o círculo */
+    margin: 0 auto; 
 }
 
 .rounded-cropped img {
@@ -36,35 +37,33 @@
 }
 
 .icon-group {
-    display: flex; /* Alinha as imagens em linha */
-    justify-content: center; /* Centraliza as imagens */
-    margin-top: 1rem; /* Espaço entre a imagem principal e os ícones */
-    gap: 1rem; /* Espaço entre os ícones */
+    display: flex; 
+    justify-content: center; 
+    margin-top: 1rem; 
+    gap: 1rem; 
 }
 
 .icon {
-    width: 40px; /* Ajusta o tamanho do ícone */
-    height: 40px; /* Mantém a proporção do ícone */
-    object-fit: contain; /* Garante que a imagem não seja cortada */
-    transition: transform 0.3s; /* Animação ao passar o mouse */
+    width: 40px; 
+    height: 40px; 
+    object-fit: contain; 
+    transition: transform 0.3s; 
 }
 
 .icon:hover {
-    transform: scale(1.2); /* Aumenta o ícone levemente ao passar o mouse */
+    transform: scale(1.2); 
 }
 
 .about-me-text {
-    font-size: 1rem; /* Tamanho de texto confortável para leitura */
-    color: #444; /* Cor de texto agradável */
-    line-height: 1.8; /* Linha espaçada para melhorar a legibilidade */
-    margin-top: 1.5rem; /* Espaço entre o texto e o grupo de ícones */
-    text-align: justify; /* Justifica o texto para um visual profissional */
-    padding: 0.5rem; /* Espaço interno para evitar texto colado nas bordas */
-    border-top: 1px solid #cccccc72; /* Adiciona uma linha para separar do restante do conteúdo */
+    font-size: 1rem; 
+    color: #444; 
+    line-height: 1.8; 
+    margin-top: 1.5rem; 
+    text-align: justify; 
+    padding: 0.5rem; 
+    border-top: 1px solid #cccccc72; 
 }
 
-
-/* Responsividade */
 @media (max-width: 768px) {
     .card-conteiner {
         width: 80%;
@@ -72,7 +71,7 @@
     }
 
     .text {
-        font-size: 0.9rem; /* Reduz o tamanho da fonte em telas menores */
+        font-size: 0.9rem; 
     }
 
     .rounded-cropped {

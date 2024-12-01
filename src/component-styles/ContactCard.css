@@ -1,24 +1,24 @@
 .contact-card-conteiner {
-    background-color: #eeeae9;
-    width: 90%; /* Ajuste inicial para telas menores */
-    max-width: 25%; /* Mantém o limite máximo em telas maiores */
-    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 90%; 
+    max-width: 100%; 
+    border-radius: 10px;
     margin: 1rem;
     padding: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transições para interação */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s, box-shadow 0.3s; 
     font-family: Arial, sans-serif;
     color: black;
 }
 
 .contact-card-conteiner:hover {
-    transform: translateY(-5px); /* Eleva levemente o cartão ao passar o mouse */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Intensifica a sombra */
+    transform: translateY(-5px); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
 .contact-title {
     text-align: center;
-    font-size: 2rem; /* Tamanho ajustável */
+    font-size: 2rem; 
     line-height: 1.5;
     margin-bottom: 1rem;
 }
@@ -55,7 +55,7 @@
     height: 15rem;
     border-radius: 50%;
     overflow: hidden;
-    margin: 1rem auto; /* Centraliza o círculo */
+    margin: 1rem auto; 
 }
 
 .rounded-cropped img {

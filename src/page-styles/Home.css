@@ -1,3 +1,13 @@
-.Home {
+.home-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     height: 100%;
+    gap: 20px; /* Replace margin with gap for more consistent spacing */
+}
+
+.vertical-cards {
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
 }
