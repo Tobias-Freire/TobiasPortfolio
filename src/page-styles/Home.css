@@ -2,12 +2,53 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: center;
     height: 100%;
-    gap: 20px; /* Replace margin with gap for more consistent spacing */
+    gap: 20px; /* Espaçamento consistente */
 }
 
 .vertical-cards {
     display: flex;
+    align-items: center;
     flex-direction: column;
     max-width: 25%;
+}
+
+.experience-container {
+    width: 100%;
+    max-width: 35%;
+    border-radius: 10px;
+    gap: 0.3rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        align-items: center; /* Centraliza os itens no eixo horizontal */
+        gap: 15px; /* Reduz o espaçamento para dispositivos menores */
+    }
+
+    .vertical-cards,
+    .experience-container {
+        max-width: 90%; /* Garante que os elementos ocupem a maior parte da largura */
+        width: 100%; /* Adapta ao tamanho da tela */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container {
+        gap: 10px; /* Ajusta o espaçamento para telas muito pequenas */
+    }
+
+    .experience-container {
+        gap: 0.2rem; /* Ajusta os espaçamentos internos */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08); /* Reduz a sombra para menos impacto visual */
+    }
 }

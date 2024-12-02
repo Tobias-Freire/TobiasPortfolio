@@ -1,23 +1,23 @@
 .card-conteiner {
     background-color: #f9f9f9;
-    width: 90%; 
-    max-width: 100%; 
-    margin: 1rem; 
+    width: 90%;
+    max-width: 100%;
+    margin: 1rem;
     border-radius: 10px;
     padding: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s, box-shadow 0.3s; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card-conteiner:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .text {
     color: black;
-    font-size: 2rem; 
-    text-align: center; 
+    font-size: 2rem;
+    text-align: center;
     line-height: 1.5;
     margin-bottom: 1rem;
 }
@@ -27,7 +27,7 @@
     height: 15rem;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .rounded-cropped img {
@@ -37,33 +37,34 @@
 }
 
 .icon-group {
-    display: flex; 
-    justify-content: center; 
-    margin-top: 1rem; 
-    gap: 1rem; 
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
 }
 
 .icon {
-    width: 40px; 
-    height: 40px; 
-    object-fit: contain; 
-    transition: transform 0.3s; 
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s;
 }
 
 .icon:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 .about-me-text {
-    font-size: 1rem; 
-    color: #444; 
-    line-height: 1.8; 
-    margin-top: 1.5rem; 
-    text-align: justify; 
-    padding: 0.5rem; 
-    border-top: 1px solid #cccccc72; 
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+    text-align: justify;
+    padding: 0.5rem;
+    border-top: 1px solid #cccccc72;
 }
 
+/* Media Queries para telas menores */
 @media (max-width: 768px) {
     .card-conteiner {
         width: 80%;
@@ -71,12 +72,21 @@
     }
 
     .text {
-        font-size: 0.9rem; 
+        font-size: 1.5rem; /* Ajuste para boa leitura em tablets */
     }
 
     .rounded-cropped {
-        width: 120px;
-        height: 120px;
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .about-me-text {
+        font-size: 0.9rem;
     }
 }
 
@@ -84,14 +94,24 @@
     .card-conteiner {
         width: 95%;
         padding: 0.75rem;
+        margin: 0.5rem 0; /* Reduz margem para otimizar o espaço */
     }
 
     .text {
-        font-size: 0.85rem;
+        font-size: 1.2rem; /* Ajuste para legibilidade em celulares */
     }
 
     .rounded-cropped {
-        width: 100px;
-        height: 100px;
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .about-me-text {
+        font-size: 0.85rem;
     }
 }
