@@ -9,7 +9,7 @@
     flex-shrink: 0;
     transition: transform 0.3s, box-shadow 0.3s;
     box-sizing: border-box; /* Adicione esta linha */
-    padding: 1rem; /* Adicione o padding desejado */
+    padding: 0.5rem; /* Adicione o padding desejado */
 }
 
 .timeline-card-container:hover {

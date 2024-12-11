@@ -21,7 +21,7 @@ function Home() {
           position: "Software development intern",
           startDate: "Jun 2024",
           endDate: "Until now",
-          description: "I have been developing web applications primarily using Oracle Apex, Oracle Database, and PL/SQL. I also frequently use JavaScript for specific functionalities and occasionally Java.",
+          description: "I have been developing web applications in a project that attends João Pessoa City Hall (PMJP) primarily using Oracle Apex, Oracle Database, and PL/SQL. I also frequently use JavaScript for specific functionalities and occasionally Java.",
           skills: ["Oracle Apex", "Oracle database", "PL/SQL", "JavaScript", "Java", "Maven"],
         },
       ];
@@ -33,9 +33,11 @@ function Home() {
                 <ContactCard />
             </div>
             <HabilitiesCard />
-            <div className='experience-container'>
-              <ExperienceTitleCard/>
-              <TimeLine experiences={experiences}/>
+            <div className='experience-container-wrapper'>
+              <div className='experience-container'>
+                <ExperienceTitleCard/>
+                <TimeLine experiences={experiences}/>
+              </div>
             </div>
         </div>
     );

@@ -12,11 +12,19 @@
     align-items: center;
     flex-direction: column;
     max-width: 25%;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.experience-container-wrapper {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .experience-container {
-    width: 100%;
-    max-width: 35%;
+    width: 95%;
     border-radius: 10px;
     gap: 0.3rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -25,30 +33,26 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* Media Queries para telas menores */
-@media (max-width: 768px) {
+@media (max-width: 911px) {
     .home-container {
         flex-direction: column; /* Alinha os elementos verticalmente */
         align-items: center; /* Centraliza os itens no eixo horizontal */
         gap: 15px; /* Reduz o espaçamento para dispositivos menores */
     }
 
-    .vertical-cards,
-    .experience-container {
-        max-width: 90%; /* Garante que os elementos ocupem a maior parte da largura */
-        width: 100%; /* Adapta ao tamanho da tela */
+    .vertical-cards {
+        max-width: 90%;
     }
-}
-
-@media (max-width: 480px) {
-    .home-container {
-        gap: 10px; /* Ajusta o espaçamento para telas muito pequenas */
+    
+    .experience-container {
+        width: 92%;
     }
 
-    .experience-container {
-        gap: 0.2rem; /* Ajusta os espaçamentos internos */
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08); /* Reduz a sombra para menos impacto visual */
+    .experience-container-wrapper {
+        width: 90%; /* Aumenta o tamanho do wrapper em telas pequenas */
     }
 }
