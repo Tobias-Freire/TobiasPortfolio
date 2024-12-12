@@ -20,18 +20,24 @@ function HabilitiesCard() {
         'Teamwork',
         'Problem-solving',
         'Adaptability',
-        'Creativity',
+        'Creative',
         'Attention to detail',
         'Hardworking',
         'Communication',
-        'Modesty, of course'
+        'Perfectionism',
+        'Think outside the box',
+        'Responsible',
+        'Reliable',
+        'Proactive',
+        'Helpful',
+        'Modest, of course'
     ];
 
     return (
         <div className='hability-card-conteiner-wrapper'>
             <div className="hability-card-conteiner">
                 <div className="hability-title">
-                    <span><b>Habilities</b></span>
+                    <span><b>Skills</b></span>
                 </div>
                 <div className="hability-icons">
                     {habilities.map((hability, index) => (

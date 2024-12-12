@@ -14,7 +14,7 @@ function Home() {
           startDate: "apr 2024",
           endDate: "dez 2024",
           description: "I helped develop a web application called SisEnex, which is used for managing the presentations of projects of research, monitoring and extension. Lumo is a laboratory from the university I study.",
-          skills: ["React", "TypeScript", "CSS", "GraphQL", "PostgreSQL"],
+          skills: ["React", "TypeScript", "CSS", "GraphQL", "PostgreSQL", "Docker"],
         },
         {
           company: "INOVATEC-JP",

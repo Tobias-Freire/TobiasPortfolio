@@ -19,7 +19,7 @@ function AboutMeCard() {
                     proudly born and raised in the state of Paraíba. I got into the Information Technology 
                     field when I was around 17. Right now, I am 19 years old, and this area never ceases to 
                     amaze me while opening new opportunities for me to grow as a learner, professional,
-                    and human being! 
+                    and human being! My goal is to become a Software Engineer!
                 </span>
             </div>
         </div>
