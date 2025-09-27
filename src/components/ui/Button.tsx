@@ -35,7 +35,12 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href && !disabled) {
     return (
-      <a href={href} target={target} className={buttonClass}>
+      <a 
+        href={href}
+        target={target}
+        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+        className={buttonClass}
+      >
         {buttonContent}
       </a>
     );

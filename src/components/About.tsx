@@ -14,7 +14,7 @@ const About: React.FC = () => {
     },
     {
       label: "Education",
-      value: "Computer Science at UFPB"
+      value: "Computer Science @ UFPB"
     },
     {
       label: "Current Semester",

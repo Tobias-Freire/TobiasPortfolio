@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './ui/Card';
 import Button from './ui/Button';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact: React.FC = () => {
+  const [emailCopiedIndex, setEmailCopiedIndex] = useState<number | null>(null);
+  const handleEmailClick = (event: React.MouseEvent, idx: number) => {
+    event.preventDefault();
+    const email = 'tobiasfreire005@gmail.com';
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        setEmailCopiedIndex(idx);
+        setTimeout(() => setEmailCopiedIndex(null), 2000);
+      })
+      .catch(() => {
+        prompt('Copy the email:', email);
+      });
+  };
+
   const contactInfo = [
     {
       icon: <FaEnvelope size={24} />,
@@ -51,22 +65,34 @@ const Contact: React.FC = () => {
 
               <div className="contact__methods">
                 {contactInfo.map((contact, index) => (
-                  <a
-                    key={index}
-                    href={contact.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact__method"
-                  >
-                    <div className="contact__method-icon">
-                      {contact.icon}
+                  contact.label === 'Email' ? (
+                    <div key={index} className="contact__method" style={{ position: 'relative', cursor: 'pointer' }} onClick={() => handleEmailClick({ preventDefault: () => {} } as React.MouseEvent<HTMLDivElement>, index)}>
+                      <div className="contact__method-icon"><FaEnvelope size={24} /></div>
+                      <div className="contact__method-info" style={{ textAlign: 'left' }}>
+                        <span className="contact__method-label">{contact.label}</span>
+                        <span className="contact__method-value">{contact.value}</span>
+                        <span className="contact__method-description">{contact.description}</span>
+                      </div>
+                      {emailCopiedIndex === index && (
+                        <span className="contact__email-copied">Email copied!</span>
+                      )}
                     </div>
-                    <div className="contact__method-info">
-                      <span className="contact__method-label">{contact.label}</span>
-                      <span className="contact__method-value">{contact.value}</span>
-                      <span className="contact__method-description">{contact.description}</span>
-                    </div>
-                  </a>
+                  ) : (
+                    <a
+                      key={index}
+                      href={contact.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact__method"
+                    >
+                      <div className="contact__method-icon">{contact.icon}</div>
+                      <div className="contact__method-info">
+                        <span className="contact__method-label">{contact.label}</span>
+                        <span className="contact__method-value">{contact.value}</span>
+                        <span className="contact__method-description">{contact.description}</span>
+                      </div>
+                    </a>
+                  )
                 ))}
               </div>
             </Card>
@@ -98,12 +124,19 @@ const Contact: React.FC = () => {
 
                 <div className="contact__cta-actions">
                   <Button 
-                    variant="primary" 
+                    variant="primary"
                     size="lg"
-                    href="mailto:tobiasfreire.dev@gmail.com"
+                    onClick={() => handleEmailClick({ preventDefault: () => {} } as React.MouseEvent<HTMLButtonElement>, -1)}
                     icon={<FaPaperPlane size={20} />}
                   >
-                    Send Me an Email
+                    <span style={{ position: 'relative', display: 'inline-block' }}>
+                      Send Me an Email
+                    </span>
+                  {emailCopiedIndex === -1 && (
+                    <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                      <span className="contact__email-copied">Email copied!</span>
+                    </div>
+                  )}
                   </Button>
                   
                   <Button 

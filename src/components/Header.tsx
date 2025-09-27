@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa';
 import Button from './ui/Button';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const [emailCopied, setEmailCopied] = useState(false);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleEmailClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    const email = 'tobiasfreire005@gmail.com';
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+      })
+      .catch(() => {
+        prompt('Copy the email:', email);
+      });
   };
 
   return (
@@ -65,17 +79,20 @@ const Header: React.FC = () => {
               >
                 <FaLinkedin size={20} />
               </a>
-              <a 
-                href="mailto:tobiasfreire005@gmail.com"
-                className="header__social-link"
-                aria-label="Email"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = "mailto:tobiasfreire005@gmail.com";
-                }}
-              >
-                <FaEnvelope size={20} />
-              </a>
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <button
+                  type="button"
+                  className="header__social-link"
+                  aria-label="Email"
+                  onClick={handleEmailClick}
+                  style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                >
+                  <FaEnvelope size={20} />
+                </button>
+                {emailCopied && (
+                  <span className="header__email-copied">Email copied!</span>
+                )}
+              </div>
             </div>
             
             <Button 

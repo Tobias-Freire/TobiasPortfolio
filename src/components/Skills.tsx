@@ -21,8 +21,8 @@ const Skills: React.FC = () => {
     { name: 'Java', icon: '/TobiasPortfolio/habilities-icons/java.png', level: 'Advanced', category: 'Backend' },
     { name: 'Spring', icon: '/TobiasPortfolio/habilities-icons/spring.png', level: 'Intermediate', category: 'Backend' },
     { name: 'Python', icon: '/TobiasPortfolio/habilities-icons/python.png', level: 'Intermediate', category: 'Backend' },
-    { name: 'FastAPI', icon: '', level: 'Intermediate', category: 'Backend' },
-    { name: 'Django', icon: '', level: 'Beginner', category: 'Backend' },
+    { name: 'FastAPI', icon: '/TobiasPortfolio/habilities-icons/fastapi.png', level: 'Intermediate', category: 'Backend' },
+    { name: 'Django', icon: '/TobiasPortfolio/habilities-icons/django.png', level: 'Beginner', category: 'Backend' },
     
     // Database
     { name: 'PostgreSQL', icon: '/TobiasPortfolio/habilities-icons/postgres.png', level: 'Intermediate', category: 'Database' },
