@@ -101,7 +101,7 @@ const Header: React.FC = () => {
               icon={<FaDownload size={16} />}
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = '/tobias_freire_en.pdf';
+                link.href = 'tobias_freire_en.pdf';
                 link.download = 'tobias_freire_en.pdf';
                 document.body.appendChild(link);
                 link.click();
