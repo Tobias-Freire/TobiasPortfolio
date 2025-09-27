@@ -1,0 +1,97 @@
+/* Design System - Color Palette & Variables */
+:root {
+  /* GitHub-inspired Color Palette */
+  --color-primary: #0d1117;           /* GitHub dark background */
+  --color-secondary: #161b22;         /* GitHub darker background */
+  --color-tertiary: #21262d;          /* GitHub card background */
+  --color-accent: #238636;            /* GitHub green */
+  --color-accent-hover: #2ea043;      /* GitHub green hover */
+  --color-blue: #1f6feb;              /* GitHub blue */
+  --color-blue-hover: #388bfd;        /* GitHub blue hover */
+  --color-purple: #8b5cf6;            /* Modern purple accent */
+  
+  /* Text Colors */
+  --color-text-primary: #f0f6fc;      /* Primary text (white) */
+  --color-text-secondary: #8b949e;    /* Secondary text (gray) */
+  --color-text-muted: #6e7681;        /* Muted text */
+  
+  /* Background Colors */
+  --color-bg-primary: #0d1117;        /* Main background */
+  --color-bg-secondary: #161b22;      /* Secondary background */
+  --color-bg-tertiary: #21262d;       /* Tertiary background */
+  --color-bg-overlay: #30363d;        /* Overlay background */
+  
+  /* Border Colors */
+  --color-border: #30363d;            /* Default border */
+  --color-border-muted: #21262d;      /* Muted border */
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;              /* 4px */
+  --spacing-sm: 0.5rem;               /* 8px */
+  --spacing-md: 1rem;                 /* 16px */
+  --spacing-lg: 1.5rem;               /* 24px */
+  --spacing-xl: 2rem;                 /* 32px */
+  --spacing-2xl: 3rem;                /* 48px */
+  --spacing-3xl: 4rem;                /* 64px */
+  
+  /* Font Sizes */
+  --font-xs: 0.75rem;                 /* 12px */
+  --font-sm: 0.875rem;                /* 14px */
+  --font-md: 1rem;                    /* 16px */
+  --font-lg: 1.125rem;                /* 18px */
+  --font-xl: 1.25rem;                 /* 20px */
+  --font-2xl: 1.5rem;                 /* 24px */
+  --font-3xl: 1.875rem;               /* 30px */
+  --font-4xl: 2.25rem;                /* 36px */
+  --font-5xl: 3rem;                   /* 48px */
+  
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;               /* 4px */
+  --radius-md: 0.375rem;              /* 6px */
+  --radius-lg: 0.5rem;                /* 8px */
+  --radius-xl: 0.75rem;               /* 12px */
+  --radius-2xl: 1rem;                 /* 16px */
+  --radius-full: 9999px;              /* Full radius */
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  
+  /* Breakpoints (for reference in media queries) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Light mode overrides (optional) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-primary: #ffffff;
+    --color-secondary: #f6f8fa;
+    --color-tertiary: #ffffff;
+    --color-text-primary: #24292f;
+    --color-text-secondary: #656d76;
+    --color-text-muted: #8b949e;
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f6f8fa;
+    --color-bg-tertiary: #ffffff;
+    --color-bg-overlay: #f6f8fa;
+    --color-border: #d0d7de;
+    --color-border-muted: #f6f8fa;
+  }
+}
