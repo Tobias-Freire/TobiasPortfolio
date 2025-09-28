@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
             
             <h1 className="hero__title">
               <span className="hero__title-main">Tobias Freire</span>
-              <span className="hero__title-sub">Technology entusiast</span>
+              <span className="hero__title-sub">Technology enthusiast</span>
             </h1>
             
             <p className="hero__description">
