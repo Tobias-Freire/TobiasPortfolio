@@ -80,7 +80,6 @@ const Footer: React.FC = () => {
                 <div className="footer__link-list">
                   <span className="footer__text">Federal University of Paraíba</span>
                   <span className="footer__text">Bachelor in Computer Science</span>
-                  <span className="footer__text">5th Semester</span>
                 </div>
               </div>
             </div>

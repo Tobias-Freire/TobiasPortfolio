@@ -149,11 +149,12 @@
   }
 
   .about__title {
-    font-size: var(--font-3xl);
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
   }
 
   .about__subtitle {
     font-size: var(--font-md);
+    padding: 0 var(--spacing-sm);
   }
 
   .about__content {
@@ -162,8 +163,28 @@
     margin-bottom: var(--spacing-2xl);
   }
 
+  .about__story-title {
+    font-size: var(--font-xl);
+  }
+
+  .about__story-text {
+    font-size: var(--font-sm);
+  }
+
+  .about__facts-title {
+    font-size: var(--font-lg);
+  }
+
+  .about__fact {
+    padding: var(--spacing-md) !important;
+  }
+
   .about__values-card {
     padding: var(--spacing-lg) !important;
+  }
+
+  .about__values-title {
+    font-size: var(--font-xl);
   }
 
   .about__values-grid {
@@ -172,10 +193,30 @@
   }
 
   .about__value {
+    text-align: left;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .about__value-icon {
+    font-size: var(--font-xl);
+  }
+
+  .about__value-content h4 {
+    font-size: var(--font-md);
+  }
+
+  .about__value-content p {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .about__value {
     text-align: center;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-md);
   }
 }
 

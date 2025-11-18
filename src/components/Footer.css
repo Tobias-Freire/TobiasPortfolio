@@ -132,6 +132,10 @@
     gap: var(--spacing-xl);
   }
 
+  .footer__brand-name {
+    font-size: var(--font-lg);
+  }
+
   .footer__links {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
@@ -146,6 +150,17 @@
 
   .footer__copy-text {
     justify-content: center;
+    font-size: 0.75rem;
+  }
+
+  .footer__tech-text {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__copy-text {
+    font-size: 0.7rem;
   }
 }
 

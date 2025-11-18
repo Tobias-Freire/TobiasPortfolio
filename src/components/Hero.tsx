@@ -36,16 +36,20 @@ const Hero: React.FC = () => {
             
             <div className="hero__stats">
               <div className="hero__stat">
-                <span className="hero__stat-number">20</span>
-                <span className="hero__stat-label">Years Old</span>
-              </div>
-              <div className="hero__stat">
-                <span className="hero__stat-number">5th</span>
-                <span className="hero__stat-label">University Semester</span>
-              </div>
-              <div className="hero__stat">
                 <span className="hero__stat-number">2+</span>
                 <span className="hero__stat-label">Years Experience</span>
+              </div>
+              <div className="hero__stat">
+                <span className="hero__stat-number">15+</span>
+                <span className="hero__stat-label">Technologies</span>
+              </div>
+              <div className="hero__stat">
+                <span className="hero__stat-number">1000+</span>
+                <span className="hero__stat-label">Liters of energetic <br></br> (Help)</span>
+              </div>
+              <div className="hero__stat">
+                <span className="hero__stat-number">∞</span>
+                <span className="hero__stat-label">Lines of Code</span>
               </div>
             </div>
             

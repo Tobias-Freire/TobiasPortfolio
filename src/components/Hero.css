@@ -235,7 +235,8 @@
 @media (max-width: 768px) {
   .hero {
     padding-top: 70px;
-    min-height: calc(100vh - 70px);
+    padding-bottom: var(--spacing-2xl);
+    min-height: auto;
   }
 
   .hero__content {
@@ -244,12 +245,24 @@
     text-align: center;
   }
 
+  .hero__greeting {
+    justify-content: center;
+    font-size: var(--font-xs);
+  }
+
+  .hero__greeting-icon {
+    width: 16px;
+    height: 16px;
+  }
+
   .hero__title-main {
-    font-size: var(--font-3xl);
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .hero__title-sub {
-    font-size: var(--font-xl);
+    font-size: clamp(1rem, 5vw, 1.25rem);
     padding-left: 0;
   }
 
@@ -258,32 +271,86 @@
   }
 
   .hero__description {
-    font-size: var(--font-md);
+    font-size: var(--font-sm);
     max-width: none;
+    line-height: 1.6;
   }
 
   .hero__stats {
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
   }
 
   .hero__stat {
     align-items: center;
+    min-width: 100px;
+  }
+
+  .hero__stat-number {
+    font-size: var(--font-xl);
+  }
+
+  .hero__stat-label {
+    font-size: 0.65rem;
+    text-align: center;
   }
 
   .hero__actions {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: var(--spacing-md);
+    width: 100%;
+  }
+
+  .hero__actions button {
+    width: 100%;
+  }
+
+  .hero__image {
+    order: -1;
   }
 
   .hero__image-container {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero__badges {
+    gap: var(--spacing-sm);
+  }
+
+  .hero__badge {
+    width: 32px;
+    height: 32px;
   }
 
   .hero__scroll {
     display: none;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .hero__stats {
+    gap: var(--spacing-sm);
+  }
+
+  .hero__stat {
+    min-width: 80px;
+  }
+
+  .hero__stat-number {
+    font-size: var(--font-lg);
+  }
+
+  .hero__stat-label {
+    font-size: 0.6rem;
+  }
+
+  .hero__image-container {
+    width: 180px;
+    height: 180px;
   }
 }
 

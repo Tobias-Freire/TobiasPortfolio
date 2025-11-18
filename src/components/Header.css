@@ -144,21 +144,45 @@
     display: none; /* Hide nav on mobile, could implement hamburger menu */
   }
 
+  .header__logo {
+    flex: 1;
+  }
+
   .header__logo-text {
     font-size: var(--font-md);
   }
 
+  .header__logo-subtitle {
+    font-size: 0.65rem;
+  }
+
   .header__actions {
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
   }
 
   .header__social {
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
   }
 
   .header__social-link {
     width: 32px;
     height: 32px;
+  }
+
+  .header__social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__logo-subtitle {
+    display: none;
+  }
+
+  .header__actions > button {
+    font-size: 0.75rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
 }
 

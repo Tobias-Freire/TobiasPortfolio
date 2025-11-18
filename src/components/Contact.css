@@ -164,6 +164,75 @@
   text-align: center;
 }
 
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  text-align: left;
+}
+
+.contact__form-label {
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact__form-input,
+.contact__form-textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--font-md);
+  font-family: inherit;
+  transition: all var(--transition-normal);
+}
+
+.contact__form-input:focus,
+.contact__form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: var(--color-bg-overlay);
+  box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.1);
+}
+
+.contact__form-input::placeholder,
+.contact__form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.contact__form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__form-success {
+  padding: var(--spacing-md);
+  background: rgba(35, 134, 54, 0.1);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent);
+  font-size: var(--font-sm);
+  text-align: center;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+.contact__form-submit {
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
 .contact__cta-stats {
   display: flex;
   justify-content: space-around;
@@ -257,11 +326,12 @@
   }
 
   .contact__title {
-    font-size: var(--font-3xl);
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
   }
 
   .contact__subtitle {
     font-size: var(--font-md);
+    padding: 0 var(--spacing-sm);
   }
 
   .contact__content {
@@ -272,7 +342,15 @@
   .contact__card,
   .contact__cta-card,
   .contact__availability {
-    padding: var(--spacing-lg) !important;
+    padding: var(--spacing-md) !important;
+  }
+
+  .contact__card-title {
+    font-size: var(--font-xl);
+  }
+
+  .contact__card-description {
+    font-size: var(--font-sm);
   }
 
   .contact__method {
@@ -283,6 +361,18 @@
   .contact__method-icon {
     width: 40px;
     height: 40px;
+  }
+
+  .contact__method-label {
+    font-size: 0.7rem;
+  }
+
+  .contact__method-value {
+    font-size: var(--font-sm);
+  }
+
+  .contact__method-description {
+    font-size: 0.75rem;
   }
 
   .contact__cta-stats {
@@ -299,6 +389,28 @@
   .contact__cta-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .contact__form-input,
+  .contact__form-textarea {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact__card,
+  .contact__cta-card,
+  .contact__availability {
+    padding: var(--spacing-sm) !important;
+  }
+
+  .contact__method {
+    gap: var(--spacing-sm);
+  }
+
+  .contact__method-icon {
+    width: 36px;
+    height: 36px;
   }
 }
 

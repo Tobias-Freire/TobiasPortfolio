@@ -6,6 +6,13 @@ import './Contact.css';
 
 const Contact: React.FC = () => {
   const [emailCopiedIndex, setEmailCopiedIndex] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const handleEmailClick = (event: React.MouseEvent, idx: number) => {
     event.preventDefault();
     const email = 'tobiasfreire005@gmail.com';
@@ -17,6 +24,37 @@ const Contact: React.FC = () => {
       .catch(() => {
         prompt('Copy the email:', email);
       });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Criar o link mailto com os dados do formulário
+    const subject = encodeURIComponent(`Message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:tobiasfreire005@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Abrir o cliente de email
+    window.location.href = mailtoLink;
+    
+    // Mostrar mensagem de sucesso
+    setFormStatus('success');
+    
+    // Resetar o formulário após 2 segundos
+    setTimeout(() => {
+      setFormData({ name: '', email: '', message: '' });
+      setFormStatus('idle');
+    }, 2000);
   };
 
   const contactInfo = [
@@ -101,53 +139,70 @@ const Contact: React.FC = () => {
           <div className="contact__cta">
             <Card variant="gradient" className="contact__cta-card">
               <div className="contact__cta-content">
-                <h3 className="contact__cta-title">Ready to Start a Project?</h3>
+                <h3 className="contact__cta-title">Send Me a Message</h3>
                 <p className="contact__cta-description">
-                  I'm always available for new opportunities and excited to work on 
-                  innovative projects. Let's discuss how I can contribute to your team!
+                  Fill out the form below and I'll get back to you as soon as possible. 
+                  Looking forward to hearing from you!
                 </p>
 
-                <div className="contact__cta-stats">
-                  <div className="contact__stat">
-                    <span className="contact__stat-number">24h</span>
-                    <span className="contact__stat-label">Response Time</span>
+                <form className="contact__form" onSubmit={handleSubmit}>
+                  <div className="contact__form-group">
+                    <label htmlFor="name" className="contact__form-label">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="contact__form-input"
+                      placeholder="Your name"
+                      required
+                    />
                   </div>
-                  <div className="contact__stat">
-                    <span className="contact__stat-number">100%</span>
-                    <span className="contact__stat-label">Commitment</span>
-                  </div>
-                  <div className="contact__stat">
-                    <span className="contact__stat-number">∞</span>
-                    <span className="contact__stat-label">Enthusiasm</span>
-                  </div>
-                </div>
 
-                <div className="contact__cta-actions">
+                  <div className="contact__form-group">
+                    <label htmlFor="email" className="contact__form-label">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="contact__form-input"
+                      placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
+
+                  <div className="contact__form-group">
+                    <label htmlFor="message" className="contact__form-label">Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      className="contact__form-textarea"
+                      placeholder="Tell me about your project or idea..."
+                      rows={5}
+                      required
+                    />
+                  </div>
+
+                  {formStatus === 'success' && (
+                    <div className="contact__form-success">
+                      Message sent successfully! Opening your email client...
+                    </div>
+                  )}
+
                   <Button 
                     variant="primary"
                     size="lg"
-                    onClick={() => handleEmailClick({ preventDefault: () => {} } as React.MouseEvent<HTMLButtonElement>, -1)}
                     icon={<FaPaperPlane size={20} />}
+                    className="contact__form-submit"
                   >
-                    <span style={{ position: 'relative', display: 'inline-block' }}>
-                      Send Me an Email
-                    </span>
-                  {emailCopiedIndex === -1 && (
-                    <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
-                      <span className="contact__email-copied">Email copied!</span>
-                    </div>
-                  )}
+                    Send Message
                   </Button>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    href="https://linkedin.com/in/tobias-freire"
-                    target="_blank"
-                  >
-                    Connect on LinkedIn
-                  </Button>
-                </div>
+                </form>
               </div>
             </Card>
 

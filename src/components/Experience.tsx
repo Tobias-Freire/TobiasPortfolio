@@ -4,57 +4,97 @@ import Badge from './ui/Badge';
 import { FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
 import './Experience.css';
 
-interface ExperienceItem {
-  company: string;
-  position: string;
+interface Position {
+  title: string;
   startDate: string;
   endDate: string;
-  location: string;
-  description: string;
+  description: string | React.ReactNode;  // Permite string ou JSX
   skills: string[];
+}
+
+interface ExperienceItem {
+  company: string;
+  location: string;
+  positions: Position[];
 }
 
 const Experience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
       company: "CortechX",
-      position: "Active Member",
-      startDate: "Jul 2025",
-      endDate: "Present",
       location: "João Pessoa, PB",
-      description:
-        "Research and development in Human-Computer Interaction, focusing on AI, Machine Learning, LLMs and emerging technologies at UFPB.",
-      skills: ["Python", "Django", "LLMs", "AI/ML"],
+      positions: [
+        {
+          title: "Team Leader",
+          startDate: "Nov 2025",
+          endDate: "Present",
+          description:
+            "Leading the web development team.",
+          skills: ["Leadership", "Project Management", "Communication"],
+        },
+        {
+          title: "Active Member",
+          startDate: "Jul 2025",
+          endDate: "Present",
+          description:
+            "CortechX is the Human-Computer Interaction Academi League at UFPB, focused on research and development, and using diverse technologies to make user digital experiences more intuitive and engaging.",
+          skills: ["Python", "Django", "LLMs", "AI/ML"],
+        }
+      ]
     },
     {
       company: "Synchro - Tax Solution",
-      position: "Software Engineering Intern",
-      startDate: "May 2025",
-      endDate: "Present",
       location: "Remote",
-      description:
-        "Developing tax solutions with Java, Spring Boot, React and TypeScript in an agile, remote environment.",
-      skills: ["Java", "Spring Boot", "TypeScript", "React", "Relational Databases", "Agile", "Docker"],
+      positions: [
+        {
+          title: "Software Engineering Intern",
+          startDate: "May 2025",
+          endDate: "Present",
+          description:
+            "Developing tax solutions with Java, Spring Boot, React and TypeScript in an agile, remote environment.",
+          skills: ["Java", "Spring Boot", "TypeScript", "React", "Relational Databases", "Agile", "Docker"],
+        }
+      ]
     },
     {
       company: "INOVATEC-JP",
-      position: "Software Development Intern",
-      startDate: "Jul 2024",
-      endDate: "Jun 2025",
       location: "João Pessoa, PB",
-      description:
-        "Created impactful systems for João Pessoa City Hall, including humanitarian aid management, price research automation, and high-performance report generation using Oracle APEX, Spring Boot, and Docker.",
-      skills: ["Oracle APEX", "Oracle Database", "Spring Boot", "RESTful APIs", "Jasper Reports", "Docker", "Postman"],
+      positions: [
+        {
+          title: "Software Development Intern",
+          startDate: "Jul 2024",
+          endDate: "Jun 2025",
+          description: (
+            <>
+              Created impactful systems for João Pessoa City Hall, including humanitarian aid management, price research automation, and high-performance report generation using Oracle APEX, Java, Spring Boot, Oracle database, and Docker.
+              <br />
+              <a 
+                href="https://blogs.oracle.com/apex/joao-pessoa-city-hall-revolutionizes-public-services-with-apex" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="experience__link"
+              >
+                See this Oracle international blog about these projects.
+              </a>
+            </>
+          ),
+          skills: ["Oracle APEX", "Oracle Database", "Java", "Spring Boot", "RESTful APIs", "Jasper Reports", "Docker", "Postman"],
+        }
+      ]
     },
     {
       company: "LUMO Laboratory",
-      position: "Fullstack Intern",
-      startDate: "Mar 2024",
-      endDate: "Jun 2024",
       location: "João Pessoa, PB",
-      description:
-        "Led frontend team and developed new features for SisEnex, supporting 700+ research projects at UFPB. Enhanced legacy code and documentation using React, Node, and Docker.",
-      skills: ["Docker", "React", "Node", "TypeScript", "PostgreSQL", "GraphQL", "Scrum"],
+      positions: [
+        {
+          title: "Fullstack Intern",
+          startDate: "Mar 2024",
+          endDate: "Jun 2024",
+          description:
+            "Led frontend team and developed new features for SisEnex, supporting 700+ research projects at UFPB. Enhanced legacy code and documentation using React, Node, and Docker.",
+          skills: ["Docker", "React", "Node", "TypeScript", "PostgreSQL", "GraphQL", "Scrum"],
+        }
+      ]
     },
   ];
 
@@ -83,44 +123,45 @@ const Experience: React.FC = () => {
               </div>
 
               <Card className="experience__card">
-                <div className="experience__header-info">
-                  <div className="experience__main-info">
-                    <h3 className="experience__position">{exp.position}</h3>
-                    <div className="experience__company">
-                      <span className="experience__company-name">{exp.company}</span>
-                    </div>
-                  </div>
-
-                  <div className="experience__meta">
-                    <div className="experience__date">
-                      <FaCalendar size={16} />
-                      <span>{formatDate(exp.startDate)} - {formatDate(exp.endDate)}</span>
-                    </div>
-                    
-                    <div className="experience__location">
-                      <FaMapMarkerAlt size={16} />
-                      <span>{exp.location}</span>
-                    </div>
+                <div className="experience__company-header">
+                  <h3 className="experience__company-name">{exp.company}</h3>
+                  <div className="experience__location">
+                    <FaMapMarkerAlt size={16} />
+                    <span>{exp.location}</span>
                   </div>
                 </div>
 
-                <p className="experience__description">
-                  {exp.description}
-                </p>
+                <div className="experience__positions">
+                  {exp.positions.map((position, posIndex) => (
+                    <div key={posIndex} className={`experience__position-item ${posIndex > 0 ? 'experience__position-item--secondary' : ''}`}>
+                      <div className="experience__position-header">
+                        <h4 className="experience__position-title">{position.title}</h4>
+                        <div className="experience__date">
+                          <FaCalendar size={14} />
+                          <span>{formatDate(position.startDate)} - {formatDate(position.endDate)}</span>
+                        </div>
+                      </div>
 
-                <div className="experience__skills">
-                  <h4 className="experience__skills-title">Technologies Used:</h4>
-                  <div className="experience__skills-list">
-                    {exp.skills.map((skill, skillIndex) => (
-                      <Badge 
-                        key={skillIndex} 
-                        variant={skillIndex % 2 === 0 ? 'accent' : 'blue'}
-                        size="sm"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
+                      <p className="experience__description">
+                        {position.description}
+                      </p>
+
+                      <div className="experience__skills">
+                        <h5 className="experience__skills-title">Technologies Used:</h5>
+                        <div className="experience__skills-list">
+                          {position.skills.map((skill, skillIndex) => (
+                            <Badge 
+                              key={skillIndex} 
+                              variant={skillIndex % 2 === 0 ? 'accent' : 'blue'}
+                              size="sm"
+                            >
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </Card>
             </div>

@@ -5,20 +5,12 @@ import './About.css';
 const About: React.FC = () => {
   const facts = [
     {
-      label: "Age",
-      value: "20 years old"
-    },
-    {
       label: "Location",
-      value: "Paraíba, Brazil"
+      value: "Brazil"
     },
     {
       label: "Education",
       value: "Computer Science @ UFPB"
-    },
-    {
-      label: "Current Semester",
-      value: "5th Semester"
     },
     {
       label: "Focus",
